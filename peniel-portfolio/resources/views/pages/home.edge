@@ -1,8 +1,86 @@
   @include ('partials/header')
 
   <body class="min-h-screen w-screen font-sans">
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
+    <section id="accueil" class="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 bg-white">
+    <p class="text-gray-600 mb-2">Bonjour, je suis</p>
+
+    <h1 class="text-4xl font-bold text-gray-900 mb-1">
+        Peniel Mabanza
     </h1>
+
+    <h2 class="text-xl font-medium text-gray-700 mb-4">
+        Développeur Web & Designer
+    </h2>
+
+    <p class="max-w-xl text-gray-600 mb-8">
+        Je crée des expériences numériques exceptionnelles en combinant design moderne 
+        et développement performant. Passionné par l'innovation et l'attention aux détails.
+    </p>
+
+    <!-- Boutons -->
+    <div class="flex items-center gap-4 mb-8">
+        <a href="#" class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition">
+            Me contacter
+        </a>
+        <a href="#" class="px-6 py-3 border border-gray-700 text-gray-800 rounded-lg hover:bg-gray-100 transition">
+            Voir mes projets
+        </a>
+    </div>
+
+    <!-- Icônes -->
+    <div class="flex items-center gap-6 text-gray-700 text-2xl mb-6">
+        <i class="fa-brands fa-github cursor-pointer hover:text-black transition"></i>
+        <i class="fa-brands fa-linkedin cursor-pointer hover:text-blue-700 transition"></i>
+        <i class="fa-regular fa-envelope cursor-pointer hover:text-red-600 transition"></i>
+    </div>
+
+    <!-- Flèche vers le bas -->
+    <div>
+        <i class="fa-solid fa-arrow-down text-gray-700 text-2xl animate-bounce"></i>
+    </div>
+</section>
+
+<section id="apropos" class="w-full py-20 px-6 md:px-16 bg-white">
+    <!-- Titre -->
+    <h2 class="text-3xl font-semibold text-center text-gray-900 mb-10">
+        À propos de moi
+    </h2>
+
+    <!-- Barre décorative -->
+    <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
+
+    <!-- Contenu -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- Image -->
+        <div>
+            <img 
+                src="\resources\views\images\workspace-peniel.png" 
+                alt="workspace" 
+                class="rounded-xl shadow-md object-cover"
+            >
+        </div>
+
+        <!-- Texte -->
+        <div class="text-gray-700 leading-relaxed text-lg">
+            <p class="mb-6">
+                Passionné par le code et par l’innovation digitale, 
+                j’aime concevoir des solutions complètes qui allient 
+                esthétique, fluidité et fonctionnalité. Je travaille avec 
+                les technologies JavaScript modernes
+                pour garantir des projets fiables et évolutifs.
+            </p>
+
+            <p class="mb-10">
+                Que ce soit pour un site vitrine, une application web, 
+                un tableau de bord ou une refonte totale, j’apporte mon savoir-faire 
+                pour transformer vos idées en un produit professionnel et efficace.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
     @include ('partials/footer')
   </body>
