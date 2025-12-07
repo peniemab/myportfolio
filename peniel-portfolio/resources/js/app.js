@@ -1,4 +1,29 @@
+// ===========================
+// SECTION PROJETS ANIMATION
+// ===========================
+  const elements = document.querySelectorAll(".project");
+  const videos = document.querySelectorAll("video");
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+
+      const video = entry.target.querySelector("video");
+      if (video) {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0; 
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  elements.forEach(el => observer.observe(el));
 // ===========================
 // MENU BURGER
 // ===========================
