@@ -1,3 +1,14 @@
+ // fleche vers le bas
+//  document.getElementById("scrollToAbout").addEventListener("click", function () {
+//         const aboutSection = document.getElementById("apropos");
+        
+//         if (aboutSection) {
+//             aboutSection.scrollIntoView({
+//                 behavior: "smooth",
+//                 block: "start"
+//             });
+//         }
+//     });
 // ===========================
 // SECTION PROJETS ANIMATION
 // ===========================
@@ -24,57 +35,64 @@
   }, { threshold: 0.5 });
 
   elements.forEach(el => observer.observe(el));
-// ===========================
-// MENU BURGER
-// ===========================
 
-const burgerBtn = document.querySelector("[command='--toggle']");
-const mobileMenu = document.getElementById("mobile-menu");
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBurger = document.getElementById('icon-burger');
+    const iconClose = document.getElementById('icon-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-burgerBtn.addEventListener("click", () => {
-    const isOpen = mobileMenu.hasAttribute("hidden") === false;
+    let isOpen = false;
 
-    if (isOpen) {
-        mobileMenu.setAttribute("hidden", "");
-        burgerBtn.setAttribute("aria-expanded", "false");
-    } else {
-        mobileMenu.removeAttribute("hidden");
-        burgerBtn.setAttribute("aria-expanded", "true");
-    }
-});
+    menuButton.addEventListener('click', () => {
+        isOpen = !isOpen;
 
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
 
-// ===========================
-// SCROLLING DES LIENS
-// ===========================
+        // Toggle icons
+        iconBurger.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
 
-// Map des liens -> sections
-const linkMap = {
-    "link-accueil": "accueil",
-    "link-apropos": "apropos",
-    "link-projets": "projets",
-    "link-competences": "competences",
-    "link-contact": "contact"
-};
-
-// Pour chaque lien, ajouter le comportement
-Object.keys(linkMap).forEach((linkId) => {
-    const link = document.getElementById(linkId);
-    const sectionId = linkMap[linkId];
-
-    link.addEventListener("click", () => {
-        const section = document.getElementById(sectionId);
-
-        // Scroll smooth
-        section.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-        // Si menu mobile ouvert → fermer automatiquement
-        if (window.innerWidth < 640) {
-            mobileMenu.setAttribute("hidden", "");
-            burgerBtn.setAttribute("aria-expanded", "false");
-        }
+        // Prevent scrolling when menu open
+        document.body.classList.toggle('overflow-hidden');
     });
-});
+
+    // fermeture auto du menu, une fois un lien cliqué
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            iconClose.classList.add('hidden');
+            iconBurger.classList.remove('hidden');
+            document.body.classList.remove('overflow-hidden');
+            isOpen = false;
+        });
+    });
+
+  // Active link on scroll
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const mobileNavLinks = document.querySelectorAll(".mobile-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const top = section.offsetTop - 80;
+      if (scrollY >= top) current = section.getAttribute("id");
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });

@@ -1,55 +1,44 @@
+<nav class="fixed top-0 left-0 right-0 bg-gray-800 text-white h-16 flex items-center px-4 z-50">
+    <!-- Logo -->
+    <h1 class="text-xl font-bold">Peniel Mabanza</h1>
 
-<nav class="relative bg-gray-800">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
+    <!-- Burger / Close Button -->
+    <button id="menu-button" class="ml-auto sm:hidden p-2 focus:outline-none transition">
+        
+        <!-- Icon Burger -->
+        <svg id="icon-burger" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
 
-      <!-- Logo -->
-      <div class="flex items-center">
-        <h1 class="text-white text-2xl font-bold">Peniel Mabanza</h1>
-      </div>
+        <!-- Icon X -->
+        <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12" />
+        </svg>
 
-      <!-- Mobile Menu Button -->
-      <div class="flex sm:hidden">
-        <button type="button" command="--toggle" commandfor="mobile-menu"
-          class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:outline-indigo-500">
-          <span class="sr-only">Open main menu</span>
+    </button>
 
-          <!-- Icon open -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            class="size-6 in-aria-expanded:hidden">
-            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-
-          <!-- Icon close -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            class="size-6 not-in-aria-expanded:hidden">
-            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Desktop menu -->
-      <div class="hidden sm:flex ml-auto">
-        <div class="flex space-x-4">
-          <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-[20px] font-medium text-white">Accueil</a>
-          <a id="link-apropos" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">À propos</a>
-          <a id="link-projets" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projets</a>
-          <a id="link-competences" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">Compétences</a>
-          <a id="link-contact" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
-        </div>
-      </div>
-
+    <!-- Desktop Menu -->
+    <div class="hidden sm:flex ml-auto space-x-6 text-lg">
+        <a href="#hero" class="hover:text-indigo-300">Accueil</a>
+        <a href="#apropos" class="hover:text-indigo-300">À propos</a>
+        <a href="#projets" class="hover:text-indigo-300">Projets</a>
+        <a href="#competences" class="hover:text-indigo-300">Compétences</a>
+        <a href="#contact" class="hover:text-indigo-300">Contact</a>
     </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <el-disclosure id="mobile-menu" hidden class="sm:hidden">
-    <div class="flex space-x-4">
-          <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-[20px] font-medium text-white">Accueil</a>
-          <a id="link-apropos" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">À propos</a>
-          <a id="link-projets" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projets</a>
-          <a id="link-competences" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">Compétences</a>
-          <a id="link-contact" class="rounded-md px-3 py-2 text-[20px] font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
-        </div>
-  </el-disclosure>
 </nav>
+
+<!-- Mobile Menu Fullscreen -->
+<div id="mobile-menu"
+     class="fixed inset-0 bg-gray-800/95 flex flex-col items-center justify-center space-y-8
+            text-3xl font-semibold text-white hidden transition-all duration-300 z-40">
+
+    <a href="#hero" class="mobile-link">Accueil</a>
+    <a href="#apropos" class="mobile-link">À propos</a>
+    <a href="#projets" class="mobile-link">Projets</a>
+    <a href="#competences" class="mobile-link">Compétences</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+</div>
