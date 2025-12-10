@@ -14,7 +14,6 @@
 // ===========================
   const elements = document.querySelectorAll(".project");
   const videos = document.querySelectorAll("video");
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -33,20 +32,23 @@
       }
     });
   }, { threshold: 0.5 });
-
   elements.forEach(el => observer.observe(el));
+// ===========================
+// SECTION PROJETS ANIMATION END
+// ===========================
 
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const iconBurger = document.getElementById('icon-burger');
+// ===========================
+// SECTION MENU 
+// ===========================
+const menuButton = document.getElementById('menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const iconBurger = document.getElementById('icon-burger');
     const iconClose = document.getElementById('icon-close');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
     let isOpen = false;
-
     menuButton.addEventListener('click', () => {
         isOpen = !isOpen;
-
         // Toggle menu visibility
         mobileMenu.classList.toggle('hidden');
 
