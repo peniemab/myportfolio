@@ -1,7 +1,7 @@
   @include ('partials/header')
 
   <body class="min-h-screen w-screen font-sans">
-    <section id="accueil" class="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 bg-white">
+    <section id="accueil" class="w-full min-h-screen flex flex-col items-center justify-center text-center py-40 px-4 bg-gray-50">
     <p class="text-gray-600 mb-2">Bonjour, je suis</p>
 
     <h1 class="text-4xl font-bold text-gray-900 mb-1">
@@ -19,16 +19,16 @@
 
     <!-- Boutons -->
     <div class="flex items-center gap-4 mb-8">
-        <a href="#" class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition">
+        <a href="contact" class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition">
             Me contacter
         </a>
-        <a href="#" class="px-6 py-3 border border-gray-700 text-gray-800 rounded-lg hover:bg-gray-100 transition">
+        <a href="#projets" class="px-6 py-3 border border-gray-700 text-gray-800 rounded-lg hover:bg-gray-100 transition">
             Voir mes projets
         </a>
     </div>
 
     <!-- Icônes -->
-    <div class="flex items-center gap-6 text-gray-700 text-2xl mb-6">
+    <div class="flex items-center gap-6 text-gray-700 text-2xl mb-30">
         <i class="fa-brands fa-github cursor-pointer hover:text-black transition"></i>
         <i class="fa-brands fa-linkedin cursor-pointer hover:text-blue-700 transition"></i>
         <i class="fa-regular fa-envelope cursor-pointer hover:text-red-600 transition"></i>
@@ -83,12 +83,17 @@
 
 <section id="competences" class="py-20 bg-gray-50">
   <div class="max-w-6xl mx-auto px-6">
-
-    <!-- Titre -->
-    <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
-      Un large éventail de compétences techniques et créatives
+    
+    <h2 class="text-3xl font-semibold text-center text-gray-900 mb-10">
+      Mes Compétences
     </h2>
 
+    <!-- Barre décorative -->
+    <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
+
+    <!-- Titre -->
+    <p class="text-center text-gray-600 mb-12">
+Découvrez une sélection de mes réalisations récentes, reflétant mon expertise en développement web et design d'interface.    </p>
     <!-- GRID DES COMPÉTENCES -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -125,7 +130,7 @@
           </svg>
           <h3 class="text-xl font-semibold">Design UI/UX</h3>
         </div>
-        <p class="text-gray-600">Figma, Adobe XD, Design Systems</p>
+        <p class="text-gray-600">Figma, Canva</p>
       </div>
 
       <!-- Mobile -->
@@ -151,22 +156,13 @@
         </div>
         <p class="text-gray-600">Optimisation, Analytics, Accessibilité</p>
       </div>
-
-      <!-- DevOps -->
-      <div class="p-6 bg-white rounded-xl shadow-sm border">
-        <div class="flex items-center gap-3 mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          <h3 class="text-xl font-semibold">DevOps & Cloud</h3>
-        </div>
-        <p class="text-gray-600">AWS, Docker, CI/CD, Git</p>
-      </div>
-
     </div>
 
-    <!-- Technologies -->
+   
+  </div>
+</section>
+<section class="w-full px-6 md:px-16 bg-white">
+   <!-- Technologies -->
     <h3 class="text-2xl font-semibold text-center mt-16 mb-10">Technologies & Outils</h3>
 
     <div class="flex flex-wrap justify-center gap-4">
@@ -185,11 +181,10 @@
       <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Firebase</span>
     </div>
 
-  </div>
 </section>
 
 
-<section id="projets" class="py-20 bg-white">
+<section id="projets" class="mt-20 py-15  bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
     
     <!-- Titre -->
@@ -286,9 +281,53 @@ L’objectif était de construire un mini-réseau social fonctionnel en JavaScri
     </div>
   </div>
 </section>
+<section id="contact" class="max-w-4xl mx-auto my-10 p-6 bg-white rounded-lg shadow-sm">
+  <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Contactez-moi</h2>
+  <p class="text-center text-gray-600 mb-8">Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter. Je serais ravi de collaborer avec vous.</p>
 
+  <div class="flex flex-wrap justify-between">
+    <div class="w-full md:w-[45%] min-w-[300px] mb-6 md:mb-0">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Informations de contact</h3>
+      <ul class="space-y-4">
+        <li class="flex items-center text-gray-700">
+          <i class="fas fa-envelope text-blue-500 text-lg mr-3"></i>
+          Email: <a href="mailto:contact@alexdupont.fr" class="text-gray-700 hover:underline ml-1">contact@alexdupont.fr</a>
+        </li>
+        <li class="flex items-center text-gray-700">
+          <i class="fas fa-phone text-blue-500 text-lg mr-3"></i>
+          Téléphone: +33 1 23 45 67 89
+        </li>
+        <li class="flex items-center text-gray-700">
+          <i class="fas fa-map-marker-alt text-blue-500 text-lg mr-3"></i>
+          Localisation: Paris, France
+        </li>
+      </ul>
+    </div>
 
-
-
+    <div class="w-full md:w-[45%] min-w-[300px] bg-gray-50">
+      <form class="space-y-4">
+        <div>
+          <label for="nom" class="block font-bold text-gray-700 mb-2">Nom complet</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="email" class="block font-bold text-gray-700 mb-2">Email</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="sujet" class="block font-bold text-gray-700 mb-2">Sujet</label>
+          <input type="text" id="sujet" name="sujet" placeholder="Sujet de votre message" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="message" class="block font-bold text-gray-700 mb-2">Message</label>
+          <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre demande..." class="w-full p-3 border border-gray-300 rounded-md h-32 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <button type="submit" class="w-full md:w-auto px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-gray-900 transition duration-300 flex items-center justify-center">
+          Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
     @include ('partials/footer')
   </body>
