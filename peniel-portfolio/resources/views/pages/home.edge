@@ -36,7 +36,9 @@
 
     <!-- Flèche vers le bas -->
     <div>
+      <a href="#apropos" class="block mb-4 text-gray-700 hover:text-gray-900 transition">
         <i class="fa-solid fa-arrow-down text-gray-700 text-2xl animate-bounce"></i>
+      </a>
     </div>
 </section>
 
@@ -156,18 +158,14 @@ Découvrez une sélection de mes réalisations récentes, reflétant mon experti
 
     <div class="flex flex-wrap justify-center gap-4">
       <!-- Badges -->
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">React</span>
+      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">HTML5</span>
+      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">CSS3</span>
+      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">JavaScript</span>
       <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">TypeScript</span>
       <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Node.js</span>
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Next.js</span>
       <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Tailwind CSS</span>
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">MongoDB</span>
       <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">PostgreSQL</span>
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Git</span>
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Docker</span>
       <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Figma</span>
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">AWS</span>
-      <span class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Firebase</span>
     </div>
 
 </section>
@@ -189,7 +187,32 @@ Découvrez une sélection de mes réalisations récentes, reflétant mon experti
     </p>
 
     <div class="grid sm:grid-cols-2 gap-10">
+      <!-- PROJECT CARD -->
+      <div class="project opacity-0 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
+        <div class="relative bg-black overflow-hidden rounded-xl shadow-md">
+          <video 
+            class="w-full object-cover rounded-xl"
+            muted 
+            playsinline 
+            preload="metadata"
+          >
+            <source src="/resources/views/images/raccourcisseur.webm" type="video/webm">
+            <source src="/resources/views/images/raccourcisseur.mp4" type="video/mp4">
+          </video>
+        </div>
 
+        <h3 class="text-xl font-semibold mt-4">Mini raccourcisseur d’URL avec génération de QR Code</h3>
+        <p class="text-gray-600 mt-1">
+         Le mini raccourcisseur d’URL permet à un utilisateur
+d’entrer une URL longue, de générer une URL courte unique, générer automatiquement un QR Code associé à cette URL, d’utiliser cette URL courte pour rediriger automatiquement vers le lien original.
+        </p>
+        <div class="mt-3 flex flex-wrap gap-3">
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">TypeScript</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Edge</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">CSS</span>
+        </div>
+      </div>
       <!-- PROJECT CARD -->
       <div class="project opacity-0 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
         <div class="relative bg-black overflow-hidden rounded-xl shadow-md">
@@ -271,7 +294,13 @@ L’objectif était de construire un mini-réseau social fonctionnel en JavaScri
   </div>
 </section>
 <section id="contact" class="max-w-4xl mx-auto my-10 p-6 bg-white rounded-lg shadow-sm">
-  <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Contactez-moi</h2>
+<!-- Titre -->
+    <h2 class="text-3xl font-semibold text-center text-gray-900 mb-10">
+        Contactez-moi
+    </h2>
+
+    <!-- Barre décorative -->
+    <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
   <p class="text-center text-gray-600 mb-8">Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter. Je serais ravi de collaborer avec vous.</p>
 
   <div class="flex flex-wrap justify-between">
@@ -280,15 +309,15 @@ L’objectif était de construire un mini-réseau social fonctionnel en JavaScri
       <ul class="space-y-4">
         <li class="flex items-center text-gray-700">
           <i class="fas fa-envelope text-blue-500 text-lg mr-3"></i>
-          Email: <a href="mailto:contact@alexdupont.fr" class="text-gray-700 hover:underline ml-1">contact@alexdupont.fr</a>
+          Email: <a href="mailto:makuntimapeniel80@gmail.com" class="text-gray-700 hover:underline ml-1">makuntimapeniel80@gmail.com</a>
         </li>
         <li class="flex items-center text-gray-700">
           <i class="fas fa-phone text-blue-500 text-lg mr-3"></i>
-          Téléphone: +33 1 23 45 67 89
+          Téléphone: <a href="tel:+243832138096" class="text-gray-700 hover:underline ml-1">+243 832 138 096</a>
         </li>
         <li class="flex items-center text-gray-700">
           <i class="fas fa-map-marker-alt text-blue-500 text-lg mr-3"></i>
-          Localisation: Paris, France
+          Localisation: Kinshasa, République Démocratique du Congo
         </li>
       </ul>
     </div>

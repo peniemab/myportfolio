@@ -98,3 +98,23 @@ const iconBurger = document.getElementById('icon-burger');
       }
     });
   });
+
+
+// ===========================
+// SECTION whasapp message
+// ===========================
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nom = document.getElementById("nom").value;
+    const email = document.getElementById("email").value;
+    const sujet = document.getElementById("sujet").value;
+    const message = document.getElementById("message").value;
+    const numeroWhatsApp = "243832138096"; 
+    const texte = 
+      `Nom : ${nom}\n` +
+      `Email : ${email}\n` +
+      `Sujet : ${sujet}\n\n` +
+      `Message :\n${message}`;
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texte)}`;
+    window.open(url, "_blank");
+  });
