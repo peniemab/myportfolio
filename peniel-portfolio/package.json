@@ -9,7 +9,7 @@
     "dev": "node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
-    "start": "node peniel-portfolio/index.js",
+    "start": "node js/index.js",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
