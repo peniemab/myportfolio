@@ -9,7 +9,7 @@
     "dev": "node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
-    "start": "node js/index.js",
+    "start": "node index.js",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
