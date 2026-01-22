@@ -57,3 +57,19 @@ ${message}`;
 const yearSpan = document.getElementById("year");
 const currentYear = new Date().getFullYear();
 yearSpan.textContent = currentYear;
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("#projets video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {}); // play() silencieux
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  videos.forEach(video => observer.observe(video));
+});
