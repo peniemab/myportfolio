@@ -22,14 +22,15 @@
                 <a href="#accueil" class="text-xl font-bold border-2 border-indigo-200 border-y-indigo-500">PM</a>
             </div>
 
-                
-                <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 font-medium">
-                    <li><a href="#accueil" class="nav-link transition delay-150 duration-300 ease-in-out">Accueil</a></li>
-                    <li><a href="#apropos" class="nav-link transition delay-150 duration-300 ease-in-out">À propos</a></li>
-                    <li><a href="#competences" class="nav-link transition delay-150 duration-300 ease-in-out">Compétences</a></li>
-                    <li><a href="#projets" class="nav-link transition delay-150 duration-300 ease-in-out">Projets</a></li>
-                    <li><a href="#contact" class="nav-link transition delay-150 duration-300 ease-in-out">Contact</a></li>
-                </ul>
+
+            <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 font-medium">
+                <li><a href="#accueil" class="nav-link transition delay-150 duration-300 ease-in-out">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link transition delay-150 duration-300 ease-in-out">À propos</a></li>
+                <li><a href="#competences"
+                        class="nav-link transition delay-150 duration-300 ease-in-out">Compétences</a></li>
+                <li><a href="#projets" class="nav-link transition delay-150 duration-300 ease-in-out">Projets</a></li>
+                <li><a href="#contact" class="nav-link transition delay-150 duration-300 ease-in-out">Contact</a></li>
+            </ul>
 
             <!-- Burger -->
             <div class="flex-1 flex justify-end md:hidden">
@@ -57,253 +58,311 @@
 
     <main class="pt-5">
         <!-- ACCUEIL -->
-            <section id="accueil"
-                class="w-full min-h-screen flex flex-col items-center justify-center text-center py-40 px-4 bg-gray-50">
-                <p class="text-gray-600 mb-2">Bonjour, je suis</p>
-                <h1 class="text-4xl font-bold text-gray-900 mb-1"> Peniel Mabanza </h1>
-                <h2 class="text-xl font-medium text-gray-700 mb-4"> Développeur Web & Designer </h2>
-                <p class="max-w-xl text-gray-600 mb-8"> Je crée des expériences numériques exceptionnelles en combinant
-                    design moderne et développement performant. Passionné par l'innovation et l'attention aux détails.
-                </p>
-                <!-- Boutons -->
-                <div class="flex items-center gap-4 mb-8">
-                    <a href="#contact"
-                        class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition"> Me
-                        contacter </a>
-                    <a href="#projets"
-                        class="px-6 py-3 border border-gray-700 text-gray-800 rounded-lg hover:bg-gray-100 transition">
-                        Voir mes projets </a>
-                </div> <!-- Icônes -->
-                <div class="flex items-center gap-6 text-gray-700 text-2xl mb-30">
-                    <a href="https://github.com/peniemab" class="hover:text-black transition">
-                        <i class="fa-brands fa-github cursor-pointer"></i> </a>
-                    <a href="mailto:makuntimapeniel80@gmail.com" class="hover:text-red-600 transition">
-                        <i class="fa-regular fa-envelope cursor-pointer"></i> </a>
-                </div>
-                <!-- Flèche vers le bas -->
+        <section id="accueil"
+            class="w-full min-h-screen flex flex-col items-center justify-center text-center py-40 px-4 bg-gray-50">
+            <p class="text-gray-600 mb-2">Bonjour, je suis</p>
+            <h1 class="text-4xl font-bold text-gray-900 mb-1"> Peniel Mabanza </h1>
+            <h2 class="text-xl font-medium text-gray-700 mb-4"> Développeur Web & Designer </h2>
+            <p class="max-w-xl text-gray-600 mb-8"> Je crée des expériences numériques exceptionnelles en combinant
+                design moderne et développement performant. Passionné par l'innovation et l'attention aux détails.
+            </p>
+            <!-- Boutons -->
+            <div class="flex items-center gap-4 mb-8">
+                <a href="#contact"
+                    class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition"> Me
+                    contacter </a>
+                <a href="#projets"
+                    class="px-6 py-3 border border-gray-700 text-gray-800 rounded-lg hover:bg-gray-100 transition">
+                    Voir mes projets </a>
+            </div> <!-- Icônes -->
+            <div class="flex items-center gap-6 text-gray-700 text-2xl mb-30">
+                <a href="https://github.com/peniemab" class="hover:text-black transition">
+                    <i class="fa-brands fa-github cursor-pointer"></i> </a>
+                <a href="mailto:makuntimapeniel80@gmail.com" class="hover:text-red-600 transition">
+                    <i class="fa-regular fa-envelope cursor-pointer"></i> </a>
+            </div>
+            <!-- Flèche vers le bas -->
+            <div>
+                <a href="#apropos" class="block mb-4 mt-16 text-gray-700 hover:text-gray-900 transition">
+                    <i class="fa-solid fa-arrow-down text-gray-700 text-2xl animate-bounce"></i></a>
+            </div>
+        </section>
+        <section id="apropos" class="w-full py-20 px-6 md:px-16 bg-white"> <!-- Titre -->
+            <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> À propos de moi </h1>
+            <!-- Barre décorative -->
+            <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <a href="#apropos" class="block mb-4 mt-16 text-gray-700 hover:text-gray-900 transition">
-                        <i class="fa-solid fa-arrow-down text-gray-700 text-2xl animate-bounce"></i></a>
+                    <img src="assets\images\workspace-peniel.png" alt="workspace"
+                        class="rounded-xl shadow-md object-cover">
                 </div>
-            </section>
-            <section id="apropos" class="w-full py-20 px-6 md:px-16 bg-white"> <!-- Titre -->
-                <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> À propos de moi </h1>
+                <div class="text-gray-700 leading-relaxed text-lg">
+                    <p class="mb-6"> Passionné par le code et par l’innovation digitale, j’aime concevoir des
+                        solutions complètes qui allient esthétique, fluidité et fonctionnalité. Je travaille avec
+                        les technologies JavaScript modernes pour garantir des projets fiables et évolutifs. </p>
+                    <p class="mb-10"> Que ce soit pour un site vitrine, une application web, un tableau de bord ou
+                        une refonte totale, j’apporte mon savoir-faire pour transformer vos idées en un produit
+                        professionnel et efficace. </p>
+                </div>
+            </div>
+        </section>
+        <section id="competences" class="py-18 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> Mes Compétences </h1>
+                <!-- Barre décorative -->
+                <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div> <!-- Titre -->
+                <p class="text-center text-gray-600 mb-12"> Découvrez une sélection de mes réalisations récentes,
+                    reflétant mon expertise en développement web et design d'interface. </p>
+                <!-- GRID DES COMPÉTENCES -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Frontend -->
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                            </svg>
+                            <h2 class="text-xl font-semibold">Développement Frontend</h2>
+                        </div>
+                        <p class="text-gray-600">HTML5 & CSS3, JavaScript (ES6+), TailwindCSS, TypeScript</p>
+                    </div> <!-- Backend -->
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6V4m0 16v-2m8-8h2M4 12H2m15.364 4.95l1.414 1.414M5.222 5.222L3.808 3.808m12.728 0l1.414 1.414M5.222 18.778l-1.414 1.414" />
+                            </svg>
+                            <h3 class="text-xl font-semibold">Développement Backend</h3>
+                        </div>
+                        <p class="text-gray-600">Node.js, AdonisJS, PostgreSQL</p>
+                    </div> <!-- UI/UX -->
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <h4 class="text-xl font-semibold">Design UI/UX</h4>
+                        </div>
+                        <p class="text-gray-600">Figma, Canva</p>
+                    </div> <!-- SEO -->
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l18-9-9 18-2-8-7-1z" />
+                            </svg>
+                            <h5 class="text-xl font-semibold">SEO & Performance</h5>
+                        </div>
+                        <p class="text-gray-600">Optimisation, Analytics, Accessibilité</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full px-6 md:px-16 bg-white"> <!-- Technologies -->
+            <h1 class="text-2xl font-semibold text-center mt-16 mb-10">Technologies & Outils</h1>
+            <div class="flex flex-wrap justify-center gap-4"> <!-- Badges --> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">HTML5</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">CSS3</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">JavaScript</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">TypeScript</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Node.js</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Tailwind CSS</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">PostgreSQL</span> <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Figma</span> </div>
+        </section>
+        <section id="projets" class="mt-20 py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4"> <!-- Titre -->
+                <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> Mes Projets </h1>
                 <!-- Barre décorative -->
                 <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="assets\images\workspace-peniel.png" alt="workspace"
-                            class="rounded-xl shadow-md object-cover">
-                    </div>
-                    <div class="text-gray-700 leading-relaxed text-lg">
-                        <p class="mb-6"> Passionné par le code et par l’innovation digitale, j’aime concevoir des
-                            solutions complètes qui allient esthétique, fluidité et fonctionnalité. Je travaille avec
-                            les technologies JavaScript modernes pour garantir des projets fiables et évolutifs. </p>
-                        <p class="mb-10"> Que ce soit pour un site vitrine, une application web, un tableau de bord ou
-                            une refonte totale, j’apporte mon savoir-faire pour transformer vos idées en un produit
-                            professionnel et efficace. </p>
-                    </div>
-                </div>
-            </section>
-            <section id="competences" class="py-18 bg-gray-50">
-                <div class="max-w-6xl mx-auto px-6">
-                    <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> Mes Compétences </h1>
-                    <!-- Barre décorative -->
-                    <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div> <!-- Titre -->
-                    <p class="text-center text-gray-600 mb-12"> Découvrez une sélection de mes réalisations récentes,
-                        reflétant mon expertise en développement web et design d'interface. </p>
-                    <!-- GRID DES COMPÉTENCES -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Frontend -->
-                        <div class="p-6 bg-white rounded-xl shadow-sm border">
-                            <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
-                                </svg>
-                                <h2 class="text-xl font-semibold">Développement Frontend</h2>
-                            </div>
-                            <p class="text-gray-600">HTML5 & CSS3, JavaScript (ES6+), TailwindCSS, TypeScript</p>
-                        </div> <!-- Backend -->
-                        <div class="p-6 bg-white rounded-xl shadow-sm border">
-                            <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 6V4m0 16v-2m8-8h2M4 12H2m15.364 4.95l1.414 1.414M5.222 5.222L3.808 3.808m12.728 0l1.414 1.414M5.222 18.778l-1.414 1.414" />
-                                </svg>
-                                <h3 class="text-xl font-semibold">Développement Backend</h3>
-                            </div>
-                            <p class="text-gray-600">Node.js, AdonisJS, PostgreSQL</p>
-                        </div> <!-- UI/UX -->
-                        <div class="p-6 bg-white rounded-xl shadow-sm border">
-                            <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                                <h4 class="text-xl font-semibold">Design UI/UX</h4>
-                            </div>
-                            <p class="text-gray-600">Figma, Canva</p>
-                        </div> <!-- SEO -->
-                        <div class="p-6 bg-white rounded-xl shadow-sm border">
-                            <div class="flex items-center gap-3 mb-4"> <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l18-9-9 18-2-8-7-1z" />
-                                </svg>
-                                <h5 class="text-xl font-semibold">SEO & Performance</h5>
-                            </div>
-                            <p class="text-gray-600">Optimisation, Analytics, Accessibilité</p>
+                <p class="text-center text-gray-600 mb-12"> Découvrez une sélection de mes réalisations récentes,
+                    reflétant mon expertise en développement web et design d'interface. </p>
+                <div class="grid sm:grid-cols-2 gap-10"> <!-- PROJECT CARD -->
+                    <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
+                        <div class="relative overflow-hidden rounded-xl shadow-md"> <video
+                                class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
+                                <source src="assets/videos/raccourcisseur.mp4" type="video/mp4">
+                                <source src="assets/videos/raccourcisseur.webm" type="video/webm">
+                            </video> </div>
+                        <h2 class="text-xl font-semibold mt-4">Mini raccourcisseur d’URL avec génération de QR Code
+                        </h2>
+                        <p class="text-gray-600 mt-1"> Le mini raccourcisseur d’URL permet à un utilisateur d’entrer
+                            une URL longue, de générer une URL courte unique, générer automatiquement un QR Code
+                            associé à cette URL, d’utiliser cette URL courte pour rediriger automatiquement vers le
+                            lien original. </p>
+                        <div class="mt-3 flex flex-wrap gap-3"> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">TypeScript</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">Edge</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">CSS</span> </div>
+                    </div> <!-- PROJECT CARD -->
+                    <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
+                        <div class="relative bg-black overflow-hidden rounded-xl shadow-md">
+                            <video class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
+                                <source src="assets/videos/kincliffcar.mp4" type="video/mp4">
+                                <source src="assets/videos/kincliffcar.webm" type="video/webm">
+                            </video>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <section class="w-full px-6 md:px-16 bg-white"> <!-- Technologies -->
-                <h1 class="text-2xl font-semibold text-center mt-16 mb-10">Technologies & Outils</h1>
-                <div class="flex flex-wrap justify-center gap-4"> <!-- Badges --> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">HTML5</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">CSS3</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">JavaScript</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">TypeScript</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Node.js</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Tailwind CSS</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">PostgreSQL</span> <span
-                        class="px-4 py-2 bg-gray-100 rounded-lg text-gray-800">Figma</span> </div>
-            </section>
-            <section id="projets" class="mt-20 py-20 bg-gray-50">
-                <div class="max-w-6xl mx-auto px-4"> <!-- Titre -->
-                    <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> Mes Projets </h1>
-                    <!-- Barre décorative -->
-                    <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
-                    <p class="text-center text-gray-600 mb-12"> Découvrez une sélection de mes réalisations récentes,
-                        reflétant mon expertise en développement web et design d'interface. </p>
-                    <div class="grid sm:grid-cols-2 gap-10"> <!-- PROJECT CARD -->
-                        <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
-                            <div class="relative overflow-hidden rounded-xl shadow-md"> <video
-                                    class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
-                                    <source src="assets/videos/raccourcisseur.mp4" type="video/mp4">
-                                    <source src="assets/videos/raccourcisseur.webm" type="video/webm">
-                                </video> </div>
-                            <h2 class="text-xl font-semibold mt-4">Mini raccourcisseur d’URL avec génération de QR Code
-                            </h2>
-                            <p class="text-gray-600 mt-1"> Le mini raccourcisseur d’URL permet à un utilisateur d’entrer
-                                une URL longue, de générer une URL courte unique, générer automatiquement un QR Code
-                                associé à cette URL, d’utiliser cette URL courte pour rediriger automatiquement vers le
-                                lien original. </p>
-                            <div class="mt-3 flex flex-wrap gap-3"> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">TypeScript</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">Edge</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">CSS</span> </div>
-                        </div> <!-- PROJECT CARD -->
-                        <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
-                            <div class="relative bg-black overflow-hidden rounded-xl shadow-md">
-                                <video class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
-                                    <source src="assets/videos/kincliffcar.mp4" type="video/mp4">
-                                    <source src="assets/videos/kincliffcar.webm" type="video/webm">
-                                </video> </div>
-                            <h3 class="text-xl font-semibold mt-4">site vitrine commercial (Business Website)</h3>
-                            <p class="text-gray-600 mt-1"> Ce site permet aux clients de consulter les services offerts,
-                                visualiser les véhicules disponibles, et réserver facilement via WhatsApp. </p>
-                            <div class="mt-3 flex flex-wrap gap-3"> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML5</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwind CSS</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">WhatsApp API pour la réservation
-                                    directe</span> </div>
-                        </div> <!-- PROJECT CARD -->
-                        <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
-                            <div class="relative overflow-hidden rounded-xl shadow-md"> <video
-                                    class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
-                                    <source src="assets/videos/clonexjs.mp4" type="video/mp4">
-                                    <source src="assets/videos/clonexjs.webm" type="video/webm">
-                                </video> </div>
-                            <h4 class="text-xl font-semibold mt-4">Clone X – Mini-réseau social inspiré de Twitter</h4>
-                            <p class="text-gray-600 mt-1"> Ce projet est un clone simplifié de Twitter (appelé X)
-                                réalisé dans le cadre de ma formation à Kadea Academy. L’objectif était de construire un
-                                mini-réseau social fonctionnel en JavaScript sans backend réel, en simulant la base de
-                                données via un fichier JSON. </p>
-                            <div class="mt-3 flex flex-wrap gap-3"> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML5</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwind CSS</span> </div>
-                        </div> <!-- PROJECT CARD -->
-                        <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
-                            <div class="relative bg-black overflow-hidden rounded-xl shadow-md">
-                                <video
-                                    class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
-                                    <source src="assets/videos/cliniqueastryd.mp4" type="video/mp4">
-                                    <source src="assets/videos/cliniqueastryd.webm" type="video/webm">
-                                </video> </div>
-                            <h5 class="text-xl font-semibold mt-4">Site web moderne et responsive pour une clinique</h5>
-                            <p class="text-gray-600 mt-1"> Conçu pour une clinique, mettant en avant les services
-                                médicaux et facilitant la prise de rendez-vous en ligne. </p>
-                            <div class="mt-3 flex flex-wrap gap-3"> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML5</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwind CSS</span> <span
-                                    class="px-3 py-1 bg-gray-100 rounded-full text-sm">WhatsApp API pour la réservation
-                                    directe</span> </div>
+                        <h3 class="text-xl font-semibold mt-4">site vitrine commercial (Business Website)</h3>
+                        <p class="text-gray-600 mt-1"> Ce site permet aux clients de consulter les services offerts,
+                            visualiser les véhicules disponibles, et réserver facilement via WhatsApp. </p>
+                        <div class="mt-3 flex flex-wrap gap-3"> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML5</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwind CSS</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">WhatsApp API pour la réservation
+                                directe</span> </div>
+                    </div> <!-- PROJECT CARD -->
+                    <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
+                        <div class="relative overflow-hidden rounded-xl shadow-md"> <video
+                                class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
+                                <source src="assets/videos/clonexjs.mp4" type="video/mp4">
+                                <source src="assets/videos/clonexjs.webm" type="video/webm">
+                            </video> </div>
+                        <h4 class="text-xl font-semibold mt-4">Clone X – Mini-réseau social inspiré de Twitter</h4>
+                        <p class="text-gray-600 mt-1"> Ce projet est un clone simplifié de Twitter (appelé X)
+                            réalisé dans le cadre de ma formation à Kadea Academy. L’objectif était de construire un
+                            mini-réseau social fonctionnel en JavaScript sans backend réel, en simulant la base de
+                            données via un fichier JSON. </p>
+                        <div class="mt-3 flex flex-wrap gap-3"> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML5</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwind CSS</span> </div>
+                    </div> <!-- PROJECT CARD -->
+                    <div class="project opacity-100 translate-y-10 transition-all mb-8 duration-700 ease-in-out">
+                        <div class="relative bg-black overflow-hidden rounded-xl shadow-md">
+                            <video class="w-full object-cover rounded-xl" muted playsinline preload="metadata">
+                                <source src="assets/videos/cliniqueastryd.mp4" type="video/mp4">
+                                <source src="assets/videos/cliniqueastryd.webm" type="video/webm">
+                            </video>
                         </div>
+                        <h5 class="text-xl font-semibold mt-4">Site web moderne et responsive pour une clinique</h5>
+                        <p class="text-gray-600 mt-1"> Conçu pour une clinique, mettant en avant les services
+                            médicaux et facilitant la prise de rendez-vous en ligne. </p>
+                        <div class="mt-3 flex flex-wrap gap-3"> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML5</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwind CSS</span> <span
+                                class="px-3 py-1 bg-gray-100 rounded-full text-sm">WhatsApp API pour la réservation
+                                directe</span> </div>
                     </div>
                 </div>
-            </section>
-            <section id="contact" class="max-w-4xl mx-auto my-10 p-6 bg-white rounded-lg shadow-sm"> <!-- Titre -->
-                <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> Contactez-moi </h1>
-                <!-- Barre décorative -->
-                <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
-                <p class="text-center text-gray-600 mb-8">Vous avez un projet en tête ? N'hésitez pas à me contacter
-                    pour en discuter. Je serais ravi de collaborer avec vous.</p>
-                <div class="flex flex-wrap justify-between">
-                    <div class="w-full md:w-[45%] min-w-[300px] mb-6 md:mb-0">
-                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Informations de contact</h2>
-                        <ul class="space-y-4">
-                            <li class="flex items-center text-gray-700"> <i
-                                    class="fas fa-envelope text-blue-500 text-lg mr-3"></i> Email: <a
-                                    href="mailto:makuntimapeniel80@gmail.com"
-                                    class="text-gray-700 hover:underline ml-1">makuntimapeniel80@gmail.com</a> </li>
-                            <li class="flex items-center text-gray-700"> <i
-                                    class="fas fa-phone text-blue-500 text-lg mr-3"></i> Téléphone: <a
-                                    href="tel:+243832138096" class="text-gray-700 hover:underline ml-1">+243 832 138
-                                    096</a> </li>
-                            <li class="flex items-center text-gray-700"> <i
-                                    class="fas fa-map-marker-alt text-blue-500 text-lg mr-3"></i> Localisation:
-                                Kinshasa, République Démocratique du Congo </li>
-                        </ul>
-                    </div>
-                    <div class="w-full md:w-[45%] min-w-[300px] bg-gray-50">
-                        <form id="contact-form" class="space-y-4">
-                            <div> <label for="nom" class="block font-bold text-gray-700 mb-2">Nom complet</label> <input
-                                    type="text" id="nom" name="nom" placeholder="Votre nom"
-                                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                            <div> <label for="email" class="block font-bold text-gray-700 mb-2">Email</label> <input
-                                    type="email" id="email" name="email" placeholder="votre@email.com"
-                                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                            <div> <label for="sujet" class="block font-bold text-gray-700 mb-2">Sujet</label> <input
-                                    type="text" id="sujet" name="sujet" placeholder="Sujet de votre message"
-                                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                            <div> <label for="message" class="block font-bold text-gray-700 mb-2">Message</label>
-                                <textarea id="message" name="message"
-                                    placeholder="Décrivez votre projet ou votre demande..."
-                                    class="w-full p-3 border border-gray-300 rounded-md h-32 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                            </div> 
-                            <button type="submit"
-                                class="w-full md:w-auto px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-gray-900 transition duration-300 flex items-center justify-center">
-                                Envoyer le message <i class="fas fa-paper-plane ml-2"></i> </button>
-                        </form>
-                    </div>
+            </div>
+        </section>
+        <section id="contact" class="max-w-4xl mx-auto my-10 p-6 bg-white rounded-lg shadow-sm"> <!-- Titre -->
+            <h1 class="text-3xl font-semibold text-center text-gray-900 mb-10"> Contactez-moi </h1>
+            <!-- Barre décorative -->
+            <div class="w-24 h-1 bg-gray-300 mx-auto mb-12"></div>
+            <p class="text-center text-gray-600 mb-8">Vous avez un projet en tête ? N'hésitez pas à me contacter
+                pour en discuter. Je serais ravi de collaborer avec vous.</p>
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-[45%] min-w-[300px] mb-6 md:mb-0">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Informations de contact</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-700"> <i
+                                class="fas fa-envelope text-blue-500 text-lg mr-3"></i> Email: <a
+                                href="mailto:makuntimapeniel80@gmail.com"
+                                class="text-gray-700 hover:underline ml-1">makuntimapeniel80@gmail.com</a> </li>
+                        <li class="flex items-center text-gray-700"> <i
+                                class="fas fa-phone text-blue-500 text-lg mr-3"></i> Téléphone: <a
+                                href="tel:+243832138096" class="text-gray-700 hover:underline ml-1">+243 832 138
+                                096</a> </li>
+                        <li class="flex items-center text-gray-700"> <i
+                                class="fas fa-map-marker-alt text-blue-500 text-lg mr-3"></i> Localisation:
+                            Kinshasa, République Démocratique du Congo </li>
+                    </ul>
                 </div>
-            </section>
-        <!-- ================= FOOTER ================= -->
-        <footer class="bg-gray-900 text-gray-300 py-6 text-center">
-    <p id="copyright">© <span id="year"></span> Peniel Mabanza — Kinshasa, RDC</p>
-</footer>
-</div>
-        <script src="assets/js/main.js"></script>
+                <div class="w-full md:w-[45%] min-w-[300px] bg-gray-50">
+                    <form id="contact-form" class="space-y-4">
+                        <div> <label for="nom" class="block font-bold text-gray-700 mb-2">Nom complet</label> <input
+                                type="text" id="nom" name="nom" placeholder="Votre nom"
+                                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div> <label for="email" class="block font-bold text-gray-700 mb-2">Email</label> <input
+                                type="email" id="email" name="email" placeholder="votre@email.com"
+                                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div> <label for="sujet" class="block font-bold text-gray-700 mb-2">Sujet</label> <input
+                                type="text" id="sujet" name="sujet" placeholder="Sujet de votre message"
+                                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div> <label for="message" class="block font-bold text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message"
+                                placeholder="Décrivez votre projet ou votre demande..."
+                                class="w-full p-3 border border-gray-300 rounded-md h-32 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full md:w-auto px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-gray-900 transition duration-300 flex items-center justify-center">
+                            Envoyer le message <i class="fas fa-paper-plane ml-2"></i> </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-gray-300 pt-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-3 items-start">
+            <!-- Branding -->
+            <div class="footer-left ">
+                <h3 class="text-white text-xl font-semibold mb-3">
+                    Peniel Mabanza
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-400">
+                    Développeur web passionné par la création de solutions numériques
+                    modernes, performantes et orientées utilisateur.
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-center">
+                <h4 class="text-white font-medium mb-4">Navigation</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#accueil" class="hover:text-white">Accueil</a></li>
+                    <li><a href="#apropos" class="hover:text-white">À propos</a></li>
+                    <li><a href="#projets" class="hover:text-white">Projets</a></li>
+                    <li><a href="#competences" class="hover:text-white">Compétences</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Réseaux -->
+            <div class="footer-right">
+                <div class="flex gap-4">
+                    <a href="https://github.com/peniemab" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:makuntimapeniel80@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+            class="mt-14 border-t border-white/10 px-6 py-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
+            <p id="copyright">© <span id="year"></span> Peniel Mabanza — Kinshasa, RDC</p>
+
+            <div class="flex gap-4 mt-3 md:mt-0">
+                <a href="#" class="hover:text-white">Mentions légales</a>
+                <a href="#" class="hover:text-white">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+    <div class="fixed bottom-4 right-4">
+        <a href="#accueil"
+            class="bg-sky-950 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition flex items-center justify-center">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+    </div>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
