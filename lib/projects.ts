@@ -66,23 +66,6 @@ export const featuredProjects: Project[] = [
   },
 ];
 
-export const otherProjects: Project[] = [
-  {
-    title: "Kin Cliff Car, Site vitrine",
-    description:
-      "Site commercial pour location de v\u00e9hicules : catalogue, services et r\u00e9servation directe via WhatsApp.",
-    tags: ["HTML5", "Tailwind CSS", "JavaScript"],
-    video: "/videos/kincliffcar.mp4",
-  },
-  {
-    title: "Clinique Astryd, Site m\u00e9dical",
-    description:
-      "Site responsive pour une clinique : pr\u00e9sentation des services m\u00e9dicaux et prise de rendez-vous en ligne.",
-    tags: ["HTML5", "JavaScript", "Tailwind CSS"],
-    video: "/videos/cliniqueastryd.mp4",
-  },
-];
-
 export function getProjectById(id: string): Project | undefined {
   return featuredProjects.find((project) => project.id === id);
 }

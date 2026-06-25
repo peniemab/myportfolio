@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { ProjectTags } from "@/components/ProjectTags";
-import { ProjectVideo } from "@/components/ProjectVideo";
 import { pageContainer } from "@/lib/layout";
-import { featuredProjects, otherProjects, type Project } from "@/lib/projects";
+import { featuredProjects, type Project } from "@/lib/projects";
 
 function projectName(title: string) {
   return title.split(",")[0].trim().toUpperCase();
@@ -91,14 +90,6 @@ function ProjectMedia({ project }: { project: Project }) {
     );
   }
 
-  if (project.video) {
-    return (
-      <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
-        <ProjectVideo src={project.video} />
-      </div>
-    );
-  }
-
   return null;
 }
 
@@ -138,40 +129,6 @@ function FeaturedProject({ project }: { project: Project }) {
   );
 }
 
-function OtherProjectCard({ project }: { project: Project }) {
-  return (
-    <article className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
-      {project.image && (
-        <div className="overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={project.image}
-            alt={`Aperçu ${project.title}`}
-            className="aspect-video w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      )}
-      {project.video && <ProjectVideo src={project.video} />}
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-[var(--fg)]">{project.title}</h3>
-        <p className="mt-2 text-[var(--muted)]">{project.description}</p>
-        <ProjectTags tags={project.tags} />
-        {project.href && (
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--fg)] hover:underline"
-          >
-            Voir le site <ArrowUpRight className="h-4 w-4" />
-          </a>
-        )}
-      </div>
-    </article>
-  );
-}
-
 export function Projects() {
   return (
     <section id="projets" className="bg-[var(--bg)]">
@@ -192,19 +149,6 @@ export function Projects() {
         {featuredProjects.map((project) => (
           <FeaturedProject key={project.title} project={project} />
         ))}
-      </div>
-
-      <div className="border-t border-[var(--border)] py-24">
-        <div className={pageContainer}>
-          <h3 className="mb-12 text-center text-2xl font-semibold text-[var(--fg)]">
-            Autres réalisations
-          </h3>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {otherProjects.map((project) => (
-              <OtherProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
