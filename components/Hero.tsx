@@ -1,23 +1,6 @@
-import type { ReactNode } from "react";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 import { site } from "@/lib/site";
-
-function RevealLine({
-  children,
-  className = "",
-  delay,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay: number;
-}) {
-  return (
-    <span className={`reveal-line ${className}`.trim()} style={{ ["--line-delay" as string]: `${delay}ms` }}>
-      <span className="reveal-line-inner">{children}</span>
-    </span>
-  );
-}
 
 export function Hero() {
   const roleFirst = site.title.split(" ").slice(0, 1)[0];
@@ -26,14 +9,23 @@ export function Hero() {
   return (
     <section id="accueil" className="relative min-h-screen w-full">
       <div className="hero-inner">
-        <h1 className="text-display-xl font-bold tracking-tight text-[var(--fg)]">
-          <RevealLine delay={0}>{site.name}</RevealLine>
+        <h1
+          className="hero-fade-up text-display-xl font-bold tracking-tight text-[var(--fg)]"
+          style={{ ["--hero-delay" as string]: "0ms" }}
+        >
+          {site.name}
         </h1>
-        <p className="mt-4 text-display-xl font-bold tracking-tight text-[var(--fg)]">
-          <RevealLine delay={120}>{roleFirst}</RevealLine>
+        <p
+          className="hero-fade-up mt-4 text-display-xl font-bold tracking-tight text-[var(--fg)]"
+          style={{ ["--hero-delay" as string]: "120ms" }}
+        >
+          {roleFirst}
         </p>
-        <h2 className="text-gradient text-display-xl font-bold tracking-tight">
-          <RevealLine delay={240}>{roleRest}</RevealLine>
+        <h2
+          className="hero-fade-up text-gradient text-display-xl font-bold tracking-tight"
+          style={{ ["--hero-delay" as string]: "240ms" }}
+        >
+          {roleRest}
         </h2>
 
         <p
