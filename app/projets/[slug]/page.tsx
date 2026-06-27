@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProjectTags } from "@/components/ProjectTags";
-import { getProjectById } from "@/lib/projects";
+import { featuredProjects, getProjectById } from "@/lib/projects";
 import { pageContainer } from "@/lib/layout";
 
 type PageProps = {
@@ -13,7 +13,9 @@ type PageProps = {
 };
 
 export async function generateStaticParams() {
-  return [{ slug: "bepas-log" }];
+  return featuredProjects
+    .filter((project) => project.id)
+    .map((project) => ({ slug: project.id! }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -55,12 +57,19 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const project = getProjectById(slug);
 
-  const mobileImages = project?.mobileImages ?? [];
-  const desktopImages = project?.desktopImages ?? [];
-
-  if (!project || (mobileImages.length === 0 && desktopImages.length === 0)) {
+  if (!project) {
     notFound();
   }
+
+  const desktopImages =
+    project.desktopImages ??
+    (project.desktopImage
+      ? [project.desktopImage]
+      : project.image
+        ? [project.image]
+        : []);
+  const mobileImages =
+    project.mobileImages ?? (project.mobileImage ? [project.mobileImage] : []);
 
   return (
     <>
@@ -83,6 +92,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </p>
 
         <ProjectTags tags={project.tags} />
+
+        {project.href && (
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            Voir le site
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        )}
 
         {desktopImages.length > 0 && (
           <section className="mt-12">

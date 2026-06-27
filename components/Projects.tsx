@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
-import { ProjectTags } from "@/components/ProjectTags";
 import { pageContainer } from "@/lib/layout";
 import { featuredProjects, type Project } from "@/lib/projects";
 
@@ -38,37 +37,48 @@ function ProjectMedia({ project }: { project: Project }) {
   }
 
   const previewImage = project.desktopImage ?? project.image;
-  const hasGallery =
-    project.id &&
-    ((project.desktopImages?.length ?? 0) > 0 ||
-      (project.mobileImages?.length ?? 0) > 0);
+  if (!previewImage) return null;
 
-  if (previewImage) {
-    return (
-      <>
-        <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={previewImage}
-            alt={`Aperçu ${project.title}`}
-            className="aspect-video w-full object-cover object-top"
-            loading="lazy"
-          />
-        </div>
-        {hasGallery && (
-          <Link
-            href={`/projets/${project.id}`}
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-6 py-2.5 text-sm font-medium text-[var(--fg)] transition hover:bg-[var(--surface)]"
-          >
-            Voir plus
-            <ChevronRight className="h-4 w-4" />
-          </Link>
-        )}
-      </>
-    );
-  }
+  return (
+    <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={previewImage}
+        alt={`Aperçu ${project.title}`}
+        className="aspect-video w-full object-cover object-top"
+        loading="lazy"
+      />
+    </div>
+  );
+}
 
-  return null;
+function ProjectActions({ project }: { project: Project }) {
+  if (!project.id && !project.href) return null;
+
+  return (
+    <div className="mt-8 flex flex-wrap justify-center gap-4">
+      {project.id && (
+        <Link
+          href={`/projets/${project.id}`}
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-6 py-2.5 text-sm font-medium text-[var(--fg)] transition hover:bg-[var(--surface)]"
+        >
+          Voir plus
+          <ChevronRight className="h-4 w-4" />
+        </Link>
+      )}
+      {project.href && (
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+        >
+          Voir le site
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      )}
+    </div>
+  );
 }
 
 function FeaturedProject({
@@ -78,19 +88,8 @@ function FeaturedProject({
   project: Project;
   isFirst?: boolean;
 }) {
-  const description =
-    project.id === "bepas-log"
-      ? (project.shortDescription ?? project.description)
-      : project.description;
-
   return (
-    <article
-      className={
-        isFirst
-          ? "py-16"
-          : "flex min-h-screen items-center py-24"
-      }
-    >
+    <article className={isFirst ? "py-16" : "flex min-h-screen items-center py-24"}>
       <div className={`${pageContainer} text-center`}>
         <p className="text-sm font-medium tracking-widest text-[var(--accent)] uppercase">
           Projet
@@ -101,19 +100,8 @@ function FeaturedProject({
         <p className="mt-2 text-lg text-[var(--muted)]">
           {project.title.split(",").slice(1).join(",").trim()}
         </p>
-        <p className="mx-auto mt-6 max-w-2xl text-[var(--muted)]">{description}</p>
-        <ProjectTags tags={project.tags} />
         <ProjectMedia project={project} />
-        {project.href && (
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
-          >
-            Voir le site <ArrowUpRight className="h-4 w-4" />
-          </a>
-        )}
+        <ProjectActions project={project} />
       </div>
     </article>
   );

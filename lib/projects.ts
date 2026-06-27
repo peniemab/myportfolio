@@ -52,6 +52,7 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
+    id: "aksantiship",
     title: "Aksantiship, Plateforme bourses",
     description:
       "Portail pour candidats africains : profil structur\u00e9, matching intelligent profil/bourse, filtrage par statut et parcours d'abonnement avec API interne.",
@@ -59,6 +60,7 @@ export const featuredProjects: Project[] = [
     desktopImage: "/images/projects/aksantiship-desktop.png",
   },
   {
+    id: "fondation-logistic",
     title: "Fondation Logistic App",
     description:
       "Application interne pour la gestion des souscriptions, versements, caisse et recouvrement (parcelles, fiches, mensualit\u00e9s) avec r\u00f4les, permissions et exports PDF.",
