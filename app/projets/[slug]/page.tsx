@@ -78,23 +78,25 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.title}
         </h1>
 
-        {desktopImages.length > 0 && (
-          <div className="mt-8 hidden md:block">
-            <Gallery images={desktopImages} title={project.title} />
-          </div>
-        )}
-
-        {mobileImages.length > 0 && (
-          <div className="mt-8 md:hidden">
-            <Gallery images={mobileImages} title={project.title} />
-          </div>
-        )}
-
         <p className="mt-8 text-lg leading-relaxed text-[var(--muted)]">
           {project.description}
         </p>
 
         <ProjectTags tags={project.tags} />
+
+        {desktopImages.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-6 text-xl font-semibold text-[var(--fg)]">Desktop</h2>
+            <Gallery images={desktopImages} title={`${project.title} desktop`} />
+          </section>
+        )}
+
+        {mobileImages.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-6 text-xl font-semibold text-[var(--fg)]">Mobile</h2>
+            <Gallery images={mobileImages} title={`${project.title} mobile`} />
+          </section>
+        )}
       </main>
       <Footer />
     </>

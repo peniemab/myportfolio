@@ -37,71 +37,60 @@ function ProjectMedia({ project }: { project: Project }) {
     );
   }
 
-  if (project.id === "bepas-log") {
-    const mobilePreview = project.mobileImages?.[0];
-    const desktopPreview = project.desktopImages?.[0];
-    const detailHref = `/projets/${project.id}`;
+  const previewImage = project.desktopImage ?? project.image;
+  const hasGallery =
+    project.id &&
+    ((project.desktopImages?.length ?? 0) > 0 ||
+      (project.mobileImages?.length ?? 0) > 0);
 
+  if (previewImage) {
     return (
       <>
         <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
-          {desktopPreview && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={desktopPreview}
-              alt={`Aperçu desktop ${project.title}`}
-              className="hidden aspect-video w-full object-cover object-top md:block"
-              loading="lazy"
-            />
-          )}
-          {mobilePreview && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={mobilePreview}
-              alt="BEPAS Log sur mobile, aperçu"
-              className="w-full object-cover md:hidden"
-              loading="lazy"
-            />
-          )}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={previewImage}
+            alt={`Aperçu ${project.title}`}
+            className="aspect-video w-full object-cover object-top"
+            loading="lazy"
+          />
         </div>
-        <Link
-          href={detailHref}
-          className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-6 py-2.5 text-sm font-medium text-[var(--fg)] transition hover:bg-[var(--surface)]"
-        >
-          <span className="md:hidden">Voir plus</span>
-          <span className="hidden md:inline">Voir toutes les captures</span>
-          <ChevronRight className="h-4 w-4" />
-        </Link>
+        {hasGallery && (
+          <Link
+            href={`/projets/${project.id}`}
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-6 py-2.5 text-sm font-medium text-[var(--fg)] transition hover:bg-[var(--surface)]"
+          >
+            Voir plus
+            <ChevronRight className="h-4 w-4" />
+          </Link>
+        )}
       </>
-    );
-  }
-
-  const previewImage = project.desktopImage ?? project.image;
-  if (previewImage) {
-    return (
-      <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={previewImage}
-          alt={`Aperçu ${project.title}`}
-          className="aspect-video w-full object-cover object-top"
-          loading="lazy"
-        />
-      </div>
     );
   }
 
   return null;
 }
 
-function FeaturedProject({ project }: { project: Project }) {
+function FeaturedProject({
+  project,
+  isFirst = false,
+}: {
+  project: Project;
+  isFirst?: boolean;
+}) {
   const description =
     project.id === "bepas-log"
       ? (project.shortDescription ?? project.description)
       : project.description;
 
   return (
-    <article className="flex min-h-screen items-center py-24">
+    <article
+      className={
+        isFirst
+          ? "py-16"
+          : "flex min-h-screen items-center py-24"
+      }
+    >
       <div className={`${pageContainer} text-center`}>
         <p className="text-sm font-medium tracking-widest text-[var(--accent)] uppercase">
           Projet
@@ -133,22 +122,22 @@ function FeaturedProject({ project }: { project: Project }) {
 export function Projects() {
   return (
     <section id="projets" className="bg-[var(--bg)]">
-      <div className={`${pageContainer} py-24 text-center`}>
+      <div className={`${pageContainer} pb-5 pt-24 text-center`}>
         <p className="text-outline text-display-lg font-bold tracking-tight">
           Mes
         </p>
         <h2 className="text-gradient text-display-lg font-bold tracking-tight">
           Projets
         </h2>
-        <p className="mx-auto mt-6 max-w-lg text-[var(--muted)]">
-          Une sélection de réalisations full stack, du site vitrine à
-          l&apos;application métier.
-        </p>
       </div>
 
       <div>
-        {featuredProjects.map((project) => (
-          <FeaturedProject key={project.title} project={project} />
+        {featuredProjects.map((project, index) => (
+          <FeaturedProject
+            key={project.title}
+            project={project}
+            isFirst={index === 0}
+          />
         ))}
       </div>
     </section>

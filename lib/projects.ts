@@ -32,6 +32,7 @@ export const featuredProjects: Project[] = [
     description:
       "Outil interne de gestion : souscripteurs, caisse, \u00e9ch\u00e9ances, recouvrement, rapports PDF/Excel, CMS articles et journal d'audit. PWA installable pour le terrain.",
     tags: ["Next.js", "Supabase", "PostgreSQL", "PWA", "TypeScript"],
+    desktopImage: "/images/projects/bepas-log/desktop-01.png",
     desktopImages: [
       "/images/projects/bepas-log/desktop-01.png",
       "/images/projects/bepas-log/desktop-02.png",
