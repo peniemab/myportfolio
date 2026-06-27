@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.title}
         </h1>
 
-        <p className="mt-8 text-lg leading-relaxed text-[var(--muted)]">
+        <p className="mt-8 whitespace-pre-line text-lg leading-relaxed text-[var(--muted)]">
           {project.description}
         </p>
 

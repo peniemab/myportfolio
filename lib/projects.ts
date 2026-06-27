@@ -16,9 +16,9 @@ export type Project = {
 export const featuredProjects: Project[] = [
   {
     id: "bepas-web",
-    title: "BEPAS Web, Site corporate",
+    title: "Site web dynamique, BEPAS SARL",
     description:
-      "Site vitrine professionnel pour BEPAS SARL (parcelles \u00e0 cr\u00e9dit \u00e0 Kinshasa) : pages projets par commune, actualit\u00e9s CMS, SEO et formulaire de contact.",
+      "Site web dynamique d\u00e9velopp\u00e9 avec Next.js et TypeScript : architecture par pages (accueil, communes, offres, FAQ, impact), contenu \u00e9ditorial g\u00e9r\u00e9 via Supabase (CMS actualit\u00e9s), formulaire de contact et sections dynamiques (t\u00e9moignages, partenaires, chiffres cl\u00e9s).\n\nInterface responsive en Tailwind CSS, optimis\u00e9e SEO (m\u00e9tadonn\u00e9es, structure s\u00e9mantique, performance) et pens\u00e9e pour une navigation claire sur mobile, tablette et desktop.",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "Tailwind CSS"],
     desktopImage: "/images/projects/bepas-web-desktop.png",
     mobileImage: "https://www.bepas-sarl.com/heroAccueil10.jpg",
