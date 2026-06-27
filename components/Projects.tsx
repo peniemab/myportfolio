@@ -8,34 +8,6 @@ function projectName(title: string) {
 }
 
 function ProjectMedia({ project }: { project: Project }) {
-  if (project.id === "bepas-web") {
-    const desktopImage = project.desktopImage ?? project.image;
-    const mobileImage = project.mobileImage ?? project.image;
-
-    return (
-      <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
-        {desktopImage && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={desktopImage}
-            alt={`Aperçu desktop ${project.title}`}
-            className="hidden aspect-video w-full object-cover object-top md:block"
-            loading="lazy"
-          />
-        )}
-        {mobileImage && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={mobileImage}
-            alt={`Aperçu ${project.title}`}
-            className="aspect-video w-full object-cover md:hidden"
-            loading="lazy"
-          />
-        )}
-      </div>
-    );
-  }
-
   const previewImage = project.desktopImage ?? project.image;
   if (!previewImage) return null;
 
