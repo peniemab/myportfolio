@@ -6,6 +6,9 @@ export function Hero() {
   return (
     <section id="accueil" className="relative min-h-screen w-full">
       <div className="hero-inner">
+        <p className="mb-6 text-lg font-medium text-[var(--fg)] lg:text-xl">
+          {site.name}
+        </p>
         <p className="text-outline text-display-xl font-bold tracking-tight">
           Je suis
         </p>
@@ -16,10 +19,7 @@ export function Hero() {
           {site.title.split(" ").slice(1).join(" ")}
         </h2>
 
-        <p className="mt-8 text-lg font-medium text-[var(--fg)] lg:text-xl">
-          {site.name}
-        </p>
-        <p className="mx-auto mt-4 max-w-xl text-[var(--muted)]">
+        <p className="mx-auto mt-8 max-w-xl text-[var(--muted)]">
           {site.description}
         </p>
 

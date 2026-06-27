@@ -76,14 +76,15 @@ function ProjectMedia({ project }: { project: Project }) {
     );
   }
 
-  if (project.image) {
+  const previewImage = project.desktopImage ?? project.image;
+  if (previewImage) {
     return (
       <div className="mt-10 w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={project.image}
+          src={previewImage}
           alt={`Aperçu ${project.title}`}
-          className="aspect-video w-full object-cover"
+          className="aspect-video w-full object-cover object-top"
           loading="lazy"
         />
       </div>

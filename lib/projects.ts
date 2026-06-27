@@ -55,7 +55,7 @@ export const featuredProjects: Project[] = [
     description:
       "Portail pour candidats africains : profil structur\u00e9, matching intelligent profil/bourse, filtrage par statut et parcours d'abonnement avec API interne.",
     tags: ["Next.js", "React", "TypeScript", "API Routes", "Tailwind CSS"],
-    image: "/images/projects/aksantiship.svg",
+    desktopImage: "/images/projects/aksantiship-desktop.png",
   },
   {
     title: "Fondation Logistic App",

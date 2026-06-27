@@ -19,10 +19,10 @@ export function Footer() {
 
         <div>
           <h4 className="mb-4 font-medium text-white">Navigation</h4>
-          <ul className="space-y-2 text-sm">
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-white">
+                <a href={link.href} className="whitespace-nowrap hover:text-white">
                   {link.label}
                 </a>
               </li>
