@@ -6,15 +6,12 @@ export function Hero() {
   return (
     <section id="accueil" className="relative min-h-screen w-full">
       <div className="hero-inner">
-        <p className="mb-6 text-lg font-medium text-[var(--fg)] lg:text-xl">
-          {site.name}
-        </p>
-        <p className="text-outline text-display-xl font-bold tracking-tight">
-          Je suis
-        </p>
         <h1 className="text-display-xl font-bold tracking-tight text-[var(--fg)]">
-          {site.title.split(" ").slice(0, 1)[0]}
+          {site.name}
         </h1>
+        <p className="mt-4 text-display-xl font-bold tracking-tight text-[var(--fg)]">
+          {site.title.split(" ").slice(0, 1)[0]}
+        </p>
         <h2 className="text-gradient text-display-xl font-bold tracking-tight">
           {site.title.split(" ").slice(1).join(" ")}
         </h2>
@@ -23,16 +20,16 @@ export function Hero() {
           {site.description}
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-nowrap justify-center gap-2 sm:gap-4">
           <a
             href="#contact"
-            className="rounded-full bg-[var(--accent)] px-8 py-3 font-medium text-white transition hover:opacity-90"
+            className="whitespace-nowrap rounded-full bg-[var(--accent)] px-4 py-2.5 text-sm font-medium text-white transition hover:opacity-90 sm:px-8 sm:py-3 sm:text-base"
           >
             Me contacter
           </a>
           <a
             href="#projets"
-            className="rounded-full border border-[var(--border)] px-8 py-3 font-medium text-[var(--fg)] transition hover:bg-[var(--surface)]"
+            className="whitespace-nowrap rounded-full border border-[var(--border)] px-4 py-2.5 text-sm font-medium text-[var(--fg)] transition hover:bg-[var(--surface)] sm:px-8 sm:py-3 sm:text-base"
           >
             Voir mes projets
           </a>
