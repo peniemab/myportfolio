@@ -41,7 +41,7 @@ export function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-[var(--muted)] transition hover:text-[var(--fg)]"
+                  className="nav-link text-[var(--muted)] transition hover:text-[var(--fg)]"
                 >
                   {link.label}
                 </a>
@@ -72,7 +72,7 @@ export function Header() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu de navigation"
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] text-lg lg:hidden"
+            className="mobile-menu-overlay fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] text-lg lg:hidden"
           >
             <div className={`absolute top-0 left-0 right-0 flex h-16 items-center justify-between ${pageContainer}`}>
               <ThemeToggle />
@@ -86,12 +86,16 @@ export function Header() {
               </button>
             </div>
             <ul className="flex flex-col items-center gap-8 text-center">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link, index) => (
+                <li
+                  key={link.href}
+                  className="mobile-menu-item"
+                  style={{ ["--menu-delay" as string]: `${120 + index * 70}ms` }}
+                >
                   <a
                     href={link.href}
                     onClick={close}
-                    className="text-2xl font-medium text-[var(--fg)]"
+                    className="nav-link text-2xl font-medium text-[var(--fg)]"
                   >
                     {link.label}
                   </a>

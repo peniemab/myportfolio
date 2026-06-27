@@ -151,7 +151,7 @@ ${message}`;
               {error && <p className="text-sm text-[var(--accent)]">{error}</p>}
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 font-semibold text-white transition hover:opacity-90 md:w-auto"
+                className="btn-interactive flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 font-semibold text-white hover:opacity-90 md:w-auto"
               >
                 Envoyer le message <Send className="ml-2 h-4 w-4" />
               </button>

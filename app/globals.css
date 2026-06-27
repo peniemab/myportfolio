@@ -124,3 +124,163 @@ body {
 .animate-fade-up {
   animation: fade-up 0.7s ease forwards;
 }
+
+/* --- Hero: line reveal + cascade --- */
+.reveal-line {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-line-inner {
+  display: block;
+  opacity: 0;
+  transform: translateY(110%);
+  animation: line-reveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--line-delay, 0ms);
+}
+
+@keyframes line-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-up {
+  opacity: 0;
+  animation: fade-up 0.7s ease forwards;
+  animation-delay: var(--hero-delay, 0ms);
+}
+
+/* --- Scroll reveal --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Navigation underline --- */
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+/* --- Mobile menu --- */
+.mobile-menu-overlay {
+  opacity: 0;
+  animation: overlay-in 0.35s ease forwards;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-menu-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-up 0.5s ease forwards;
+  animation-delay: var(--menu-delay, 0ms);
+}
+
+/* --- Micro-interactions --- */
+.btn-interactive {
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-interactive:hover {
+  transform: scale(1.04);
+}
+
+.btn-interactive:active {
+  transform: scale(0.97);
+}
+
+.icon-interactive {
+  display: inline-flex;
+  transition:
+    transform 0.25s ease,
+    color 0.2s ease;
+}
+
+.icon-interactive:hover {
+  transform: translateY(-3px) scale(1.12);
+}
+
+/* --- Stagger tags --- */
+.stagger-tag {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+  transition-delay: var(--tag-delay, 0ms);
+}
+
+.stagger-tags.is-visible .stagger-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-line-inner,
+  .hero-fade-up,
+  .mobile-menu-overlay,
+  .mobile-menu-item,
+  .animate-fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .stagger-tag {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .btn-interactive:hover,
+  .btn-interactive:active,
+  .icon-interactive:hover {
+    transform: none;
+  }
+}
