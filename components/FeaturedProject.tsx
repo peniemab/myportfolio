@@ -63,10 +63,7 @@ export function FeaturedProject({
     <article className={isFirst ? "py-16" : "flex min-h-screen items-center py-24"}>
       <div className={`${pageContainer} text-center`}>
         <ScrollReveal>
-          <p className="text-sm font-medium tracking-widest text-[var(--accent)] uppercase">
-            Projet
-          </p>
-          <h3 className="mt-4 text-balance text-3xl font-bold tracking-tight break-words text-[var(--fg)] sm:text-4xl lg:text-5xl">
+          <h3 className="text-balance text-3xl font-bold tracking-tight break-words text-[var(--fg)] sm:text-4xl lg:text-5xl">
             {projectName(project.title)}
           </h3>
           <p className="mt-2 text-lg text-[var(--muted)]">

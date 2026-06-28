@@ -1,9 +1,16 @@
+export type ProjectStackGroup = {
+  category: string;
+  items: string[];
+};
+
 export type Project = {
   id?: string;
   title: string;
   description: string;
   shortDescription?: string;
   tags: string[];
+  features?: string[];
+  stack?: ProjectStackGroup[];
   image?: string;
   desktopImage?: string;
   desktopImages?: string[];
@@ -26,11 +33,35 @@ export const featuredProjects: Project[] = [
   },
   {
     id: "bepas-log",
-    title: "BEPAS Log, Application m\u00e9tier",
+    title: "Application de gestion pour BEPAS",
     shortDescription:
-      "Outil interne de gestion pour BEPAS : souscripteurs, caisse, \u00e9ch\u00e9ances et recouvrement.",
+      "Application de gestion pour BEPAS : souscription fonci\u00e8re, caisse, \u00e9ch\u00e9ances et recouvrement.",
     description:
-      "Outil interne de gestion : souscripteurs, caisse, \u00e9ch\u00e9ances, recouvrement, rapports PDF/Excel, CMS articles et journal d'audit. PWA installable pour le terrain.",
+      "Application de gestion pour BEPAS qui remplace des processus manuels (fiches papier, tableurs) par un syst\u00e8me unifi\u00e9 de gestion des dossiers de souscription fonci\u00e8re.\n\nLes \u00e9quipes peuvent enregistrer de nouveaux souscripteurs via des formulaires d\u00e9di\u00e9s (militaire / civil). La caisse permet d'encaisser les versements (acompte initial et mensualit\u00e9s) avec g\u00e9n\u00e9ration de re\u00e7us PDF. Le module recouvrement calcule les retards et dettes selon une logique m\u00e9tier sp\u00e9cifique. Les \u00e9ch\u00e9ances mensuelles offrent une vue op\u00e9rationnelle avec filtres (pay\u00e9, retard, partiel, attente acompte). Un tableau de bord agr\u00e8ge les indicateurs cl\u00e9s, et les rapports permettent des synth\u00e8ses par p\u00e9riode et par site.\n\nL'application int\u00e8gre aussi un CMS actualit\u00e9s, un journal d'audit, une corbeille (soft delete), la gestion des utilisateurs (r\u00f4les admin / agent / lecture seule + permissions fines), et une v\u00e9rification par QR code des fiches et re\u00e7us.",
+    features: [
+      "Inscription des souscripteurs (militaire / civil)",
+      "Caisse : acompte, mensualit\u00e9s et re\u00e7us PDF",
+      "Recouvrement et \u00e9ch\u00e9ances avec filtres op\u00e9rationnels",
+      "Tableau de bord et rapports par p\u00e9riode / site",
+      "CMS actualit\u00e9s partag\u00e9 avec le site web BEPAS",
+      "PWA hors ligne, r\u00f4les utilisateurs et journal d'audit",
+    ],
+    stack: [
+      {
+        category: "Frontend",
+        items: [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Lucide Icons",
+        ],
+      },
+      {
+        category: "Backend / BDD",
+        items: ["Supabase", "PostgreSQL", "Auth", "RLS", "Storage"],
+      },
+    ],
     tags: ["Next.js", "Supabase", "PostgreSQL", "PWA", "TypeScript"],
     desktopImage: "/images/projects/bepas-log/desktop-01.png",
     desktopImages: [

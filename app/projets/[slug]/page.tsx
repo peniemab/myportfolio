@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { ProjectTags } from "@/components/ProjectTags";
+import { PhotoCollage } from "@/components/PhotoCollage";
+import { ProjectDetailBody } from "@/components/ProjectDetailBody";
 import { featuredProjects, getProjectById } from "@/lib/projects";
 import { pageContainer } from "@/lib/layout";
 
@@ -26,30 +27,35 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Projet introuvable" };
   }
 
+  const summary =
+    project.shortDescription ?? project.description.split("\n\n")[0] ?? project.description;
+
   return {
     title: `${project.title} | Peniel Mabanza`,
-    description: project.description,
+    description: summary,
   };
 }
 
-function Gallery({ images, title }: { images: string[]; title: string }) {
+function PhotoCollageSection({
+  images,
+  title,
+  label,
+  className = "",
+}: {
+  images: string[];
+  title: string;
+  label: string;
+  className?: string;
+}) {
+  if (images.length === 0) return null;
+
   return (
-    <div className="space-y-4">
-      {images.map((src, index) => (
-        <div
-          key={src}
-          className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-lg"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={src}
-            alt={`${title}, capture ${index + 1}`}
-            className="w-full object-cover"
-            loading={index === 0 ? "eager" : "lazy"}
-          />
-        </div>
-      ))}
-    </div>
+    <section className={`mt-14 ${className}`.trim()}>
+      <h2 className="mb-6 text-sm font-semibold tracking-widest text-[var(--accent)] uppercase">
+        Captures {label}
+      </h2>
+      <PhotoCollage images={images} title={title} />
+    </section>
   );
 }
 
@@ -62,14 +68,20 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   const desktopImages =
-    project.desktopImages ??
-    (project.desktopImage
-      ? [project.desktopImage]
-      : project.image
-        ? [project.image]
-        : []);
+    project.id === "bepas-web"
+      ? []
+      : project.desktopImages ??
+        (project.desktopImage
+          ? [project.desktopImage]
+          : project.image
+            ? [project.image]
+            : []);
   const mobileImages =
-    project.mobileImages ?? (project.mobileImage ? [project.mobileImage] : []);
+    project.id === "bepas-web"
+      ? []
+      : project.mobileImages ?? (project.mobileImage ? [project.mobileImage] : []);
+
+  const subtitle = project.title.split(",").slice(1).join(",").trim();
 
   return (
     <>
@@ -83,41 +95,44 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           Retour aux projets
         </Link>
 
-        <h1 className="text-3xl font-semibold text-[var(--fg)]">
-          {project.title}
-        </h1>
+        <header className="w-full border-b border-[var(--border)] pb-8">
+          <p className="text-sm font-medium tracking-widest text-[var(--accent)] uppercase">
+            {project.id === "bepas-log" ? "Application de gestion pour BEPAS" : "Projet"}
+          </p>
+          <h1 className="mt-2 text-3xl font-semibold text-[var(--fg)] sm:text-4xl">
+            {project.title.split(",")[0].trim()}
+          </h1>
+          {subtitle && (
+            <p className="mt-2 text-lg text-[var(--muted)]">{subtitle}</p>
+          )}
+        </header>
 
-        <p className="mt-8 whitespace-pre-line text-lg leading-relaxed text-[var(--muted)]">
-          {project.description}
-        </p>
-
-        <ProjectTags tags={project.tags} />
+        <ProjectDetailBody project={project} />
 
         {project.href && (
           <a
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+            className="btn-interactive mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-medium text-white hover:opacity-90"
           >
             Voir le site
             <ArrowUpRight className="h-4 w-4" />
           </a>
         )}
 
-        {desktopImages.length > 0 && (
-          <section className="mt-12">
-            <h2 className="mb-6 text-xl font-semibold text-[var(--fg)]">Desktop</h2>
-            <Gallery images={desktopImages} title={`${project.title} desktop`} />
-          </section>
-        )}
+        <PhotoCollageSection
+          images={desktopImages}
+          title={`${project.title} desktop`}
+          label="desktop"
+          className="hidden md:block"
+        />
 
-        {mobileImages.length > 0 && (
-          <section className="mt-12">
-            <h2 className="mb-6 text-xl font-semibold text-[var(--fg)]">Mobile</h2>
-            <Gallery images={mobileImages} title={`${project.title} mobile`} />
-          </section>
-        )}
+        <PhotoCollageSection
+          images={mobileImages}
+          title={`${project.title} mobile`}
+          label="mobile"
+        />
       </main>
       <Footer />
     </>

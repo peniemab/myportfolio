@@ -1,3 +1,4 @@
+@import "./photo-collage.css";
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
