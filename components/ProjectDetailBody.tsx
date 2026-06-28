@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { TechPillList } from "@/components/TechPill";
 import type { Project } from "@/lib/projects";
 
 function DetailSection({
@@ -55,33 +56,15 @@ export function ProjectDetailBody({ project }: { project: Project }) {
 
       {project.stack && project.stack.length > 0 && (
         <DetailSection title="Stack technique">
-          <dl className="w-full divide-y divide-[var(--border)]">
-            {project.stack.map((group) => (
-              <div
-                key={group.category}
-                className="grid gap-2 py-5 first:pt-0 sm:grid-cols-[10rem_1fr] sm:gap-10"
-              >
-                <dt className="text-sm font-medium text-[var(--fg)]">
-                  {group.category}
-                </dt>
-                <dd className="text-base leading-relaxed text-[var(--muted)]">
-                  {group.items.join(" · ")}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <TechPillList
+            items={project.stack.flatMap((group) => group.items)}
+            align="start"
+          />
         </DetailSection>
       )}
 
       {!hasRichContent && project.tags.length > 0 && (
-        <div className="mt-8 flex flex-wrap gap-x-3 gap-y-2 text-sm text-[var(--muted)]">
-          {project.tags.map((tag, index) => (
-            <span key={tag}>
-              {index > 0 && <span className="mr-3 text-[var(--border)]">·</span>}
-              {tag}
-            </span>
-          ))}
-        </div>
+        <TechPillList className="mt-8" items={project.tags} align="start" />
       )}
     </>
   );

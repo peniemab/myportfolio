@@ -1,6 +1,7 @@
 import { Code2, Layout, Server, Zap } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { TechPillList } from "@/components/TechPill";
 import { pageContainer } from "@/lib/layout";
 import { skills, technologies } from "@/lib/site";
 
@@ -50,17 +51,7 @@ export function Skills() {
               Technologies & Outils
             </h2>
           </ScrollReveal>
-          <ScrollReveal className="stagger-tags flex flex-wrap justify-center gap-3" delay={100}>
-            {technologies.map((tech, index) => (
-              <span
-                key={tech}
-                className="stagger-tag rounded-full border border-[var(--border)] bg-[var(--bg)] px-4 py-2 text-[var(--fg)]"
-                style={{ ["--tag-delay" as string]: `${index * 50}ms` }}
-              >
-                {tech}
-              </span>
-            ))}
-          </ScrollReveal>
+          <TechPillList items={technologies} animate revealDelay={100} />
         </div>
       </section>
     </>
