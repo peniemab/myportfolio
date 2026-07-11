@@ -50,9 +50,7 @@ export function Header() {
           </ul>
 
           <div className="flex items-center justify-end gap-3">
-            <div className="hidden lg:block">
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
             <button
               type="button"
               aria-label="Ouvrir le menu"
@@ -74,8 +72,7 @@ export function Header() {
             aria-label="Menu de navigation"
             className="mobile-menu-overlay fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] text-lg lg:hidden"
           >
-            <div className={`absolute top-0 left-0 right-0 flex h-16 items-center justify-between ${pageContainer}`}>
-              <ThemeToggle />
+            <div className={`absolute top-0 left-0 right-0 flex h-16 items-center justify-end ${pageContainer}`}>
               <button
                 type="button"
                 aria-label="Fermer le menu"
