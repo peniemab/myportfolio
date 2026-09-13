@@ -29,7 +29,7 @@ export const skills = [
   },
   {
     title: "D\u00e9veloppement Backend",
-    description: "Node.js, Next.js API, Supabase, Appwrite, PostgreSQL",
+    description: "Node.js, Next.js API, Supabase, Appwrite, Neon, PostgreSQL",
     color: "text-green-600",
     icon: "server",
   },
@@ -57,6 +57,7 @@ export const technologies = [
   "PostgreSQL",
   "Supabase",
   "Appwrite",
+  "Neon",
   "React",
   "Next.js",
 ] as const;

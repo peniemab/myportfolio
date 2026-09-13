@@ -4,6 +4,7 @@ import {
   SiCss,
   SiHtml5,
   SiJavascript,
+  SiNeon,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
@@ -29,6 +30,7 @@ const techIcons: Record<string, TechIconConfig> = {
   PostgreSQL: { icon: SiPostgresql, color: "#4169E1" },
   Supabase: { icon: SiSupabase, color: "#3FCF8E" },
   Appwrite: { icon: SiAppwrite, color: "#FD366E" },
+  Neon: { icon: SiNeon, color: "#00E699" },
   React: { icon: SiReact, color: "#61DAFB" },
   "Next.js": { icon: SiNextdotjs, color: "#000000", darkColor: "#FFFFFF" },
 };
